@@ -7,7 +7,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -19,9 +18,8 @@ model User {
   accounts      Account[]
   sessions      Session[]
   stripeCustomerId String? @unique
-  userType userType?
-
-onboardingCompleted Boolean @default(false)
+  userType      userType?
+  onboardingCompleted Boolean @default(false)
 
   company Company?
   jobseeker Jobseeker?
@@ -37,7 +35,7 @@ enum userType {
 }
  
 
- model Company {
+model Company {
   id String @id @default(uuid())
   name String
   location String
@@ -53,7 +51,7 @@ enum userType {
   updatedAT DateTime @updatedAt
  }
 
- model Jobpost {
+model Jobpost {
   id String @id @default(uuid())
   jobTitle String
   employmentType String
@@ -91,7 +89,7 @@ model SavedJobPost {
 
 
 
- model Jobseeker {
+model Jobseeker {
   id String @id @default(uuid())
   name String
   about String
