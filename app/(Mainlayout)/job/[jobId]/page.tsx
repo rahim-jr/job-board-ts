@@ -19,7 +19,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 
-const aj = arcjet.withRule(
+const aj = arcjet?.withRule(
        detectBot({
       mode: "LIVE",
       allow: [
@@ -92,9 +92,9 @@ export default async function Job({params}: {params: Promise<{ jobId : string }>
 
     // arcjet code
     const req = await request();
-    const decision = await aj.protect(req);
+    const decision = await aj?.protect(req);
 
-    if(decision.isDenied()){
+    if(decision?.isDenied()){
         throw new Error ("Forbidden");
     }
     // arcjet code end
