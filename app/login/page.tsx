@@ -32,7 +32,7 @@ export default async function login() {
            src={Logo}
          className="size-10"
            alt="Image"/>
-           <h1 className="font-bold text-3xl">Job<span className="text-primary">Ilham</span></h1>
+           <h1 className="font-bold text-3xl">Job<span className="text-primary">Board-tsx</span></h1>
            </Link>
            <Card className="flex flex-col">
            <CardHeader>

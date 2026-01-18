@@ -168,7 +168,7 @@ export default async function Job({params}: {params: Promise<{ jobId : string }>
                 <h3 className="font-semibold">Apply now</h3>
             <p className="text-sm text-muted-foreground mt-1">Please 
                 let {data.company.name} know you found this job on 
-                jobIlham. This helps us grow !</p>
+                jobBoard-tsx. This helps us grow !</p>
         </div>
         <Button className="w-full">Apply now</Button>
         </div>

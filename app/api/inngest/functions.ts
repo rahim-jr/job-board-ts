@@ -89,8 +89,8 @@ export const sendPeriodicJobListing = inngest.createFunction(
 
                
                await resend.emails.send({
-                 from: "JobIlham <onboarding@resend.dev>",
-                to:["farjanayeasminilham@gmail.com"],
+                 from: "JobBoard-tsx <onboarding@resend.dev>",
+                to:["rahim.cse.diu@gmail.com"],
                 subject:"Latest Job Opportunities for you",
              html: `
   <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

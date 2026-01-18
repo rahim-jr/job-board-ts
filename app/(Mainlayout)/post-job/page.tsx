@@ -30,7 +30,7 @@ const testimonial = [
 
     {
         quote:"Success in business isn’t just about making money, it’s about making a difference.",
-        author:"Yeasmin Ilham",
+        author:"Some random person",
         company:"MaryKay"
     },
 
