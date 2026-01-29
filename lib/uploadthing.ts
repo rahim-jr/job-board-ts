@@ -1,9 +1,6 @@
-import {
-  generateUploadButton,
-  generateUploadDropzone,
-} from "@uploadthing/react";
+// Temporary stub implementations to avoid pulling in UploadThing's
+// bundler-heavy dependencies that are currently incompatible with Turbopack.
+// Replace with real "@uploadthing/react" imports once the upstream issue is fixed.
 
-import type { OurFileRouter } from "../app/api/uploadthing/core";
-
-export const UploadButton = generateUploadButton<OurFileRouter>();
-export const UploadDropzone = generateUploadDropzone<OurFileRouter>();
+export const UploadButton = () => null;
+export const UploadDropzone = () => null;

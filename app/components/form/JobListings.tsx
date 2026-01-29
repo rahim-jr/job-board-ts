@@ -99,33 +99,37 @@ export async function JobListingsCard({
   jobTypes: string[];
   location: string;
 }) {
-  const { jobs, totalPages } = await getData({
-    page: currentPage,
-    pageSize: 2,
-    jobTypes: jobTypes,
-    location: location,
-  });
+  try {
+    const { jobs, totalPages } = await getData({
+      page: currentPage,
+      pageSize: 2,
+      jobTypes: jobTypes,
+      location: location,
+    });
 
-  return (
-    <>
-      {jobs.length > 0 ? (
-        <div className="flex flex-col gap-6">
-          {jobs.map((job) => (
-            <CompanyCard key={job.id} postData={job} />
-          ))}
+    return (
+      <>
+        {jobs.length > 0 ? (
+          <div className="flex flex-col gap-6">
+            {jobs.map((job) => (
+              <CompanyCard key={job.id} postData={job} />
+            ))}
+          </div>
+        ) : (
+          <NoJobcard
+            title="NO Jobs found"
+            about="Try searching for a
+           different job title or location."
+            buttontext="Clear all filters"
+            link="/"
+          />
+        )}
+        <div className="flex justify-center mt-6">
+          <MainPagenation totalPages={totalPages} currentPage={currentPage} />
         </div>
-      ) : (
-        <NoJobcard
-          title="NO Jobs found"
-          about="Try searching for a
-         different job title or location."
-          buttontext="Clear all filters"
-          link="/"
-        />
-      )}
-      <div className="flex justify-center mt-6">
-        <MainPagenation totalPages={totalPages} currentPage={currentPage} />
-      </div>
-    </>
-  );
+      </>
+    );
+  } catch (error: any) {
+    throw error;
+  }
 }

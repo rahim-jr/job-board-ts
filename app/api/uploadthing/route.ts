@@ -1,11 +1,9 @@
-import { createRouteHandler } from "uploadthing/next";
+// Temporary stub route handlers to avoid importing UploadThing's
+// Next.js integration, which currently conflicts with Turbopack.
+// Replace with the real createRouteHandler(...) usage once fixed.
 
-import { ourFileRouter } from "./core";
+export async function GET() {
+  return new Response("UploadThing API temporarily disabled", { status: 503 });
+}
 
-// Export routes for Next App Router
-export const { GET, POST } = createRouteHandler({
-  router: ourFileRouter,
-
-  // Apply an (optional) custom config:
-  // config: { ... },
-});
+export const POST = GET;
